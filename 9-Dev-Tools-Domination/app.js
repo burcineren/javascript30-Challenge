@@ -7,25 +7,56 @@
     }
 
     // Regular
-
-    // Interpolated
-
+        console.log('hello');
     // Styled
-
+        // console.log('%c I am green text ', 'font-size:50px; background: blue; text-shadow: 10px 10px 0 red');
     // warning!
-
+        console.warn('Oh Nooo!');
     // Error :|
-
+        console.error('Error')
     // Info
-
+        console.info('Information');
     // Testing
+        
+    const p = document.querySelector('p');
+
+    console.assert(p.classList.contains('ouch'),'That is wrong!');
 
     // clearing
 
+        console.clear();
     // Viewing DOM Elements
+        console.log(p);
+        console.dir(p);
 
+        console.clear();
     // Grouping together
+
+    dogs.forEach(dog => {
+        console.groupCollapsed(`${dog.name}`);
+        console.log(`This is ${dog.name}` );
+         console.log(` ${dog.name} is ${dog.age} years old` );
+         console.log(` ${dog.name} is ${dog.age * 7 } dog years old` );
+        console.groupEnd(`${dog.name}`);
+    });
 
     // counting
 
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');    
+    console.count('Wes');
+    console.count('Steve');
+
     // timing
+
+    console.time('fetching data');
+    fetch('https://api.github.com/users/burcineren')
+        .then(data => data.json())  
+        .then(data => {
+            console.timeEnd('fetching data');
+            console.log(data);
+    });
+    console.table(dogs)
